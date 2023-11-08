@@ -24,3 +24,13 @@ We need both the navigator and the stack for our screen navigations.
 ### BarcodeScanner.js
 
 Check this file for the barcode scanner. I have implemented a reusable component
+
+### QRCodescanner.js
+
+Check this file for the QRcode scanner. I have implemented a reusable component
+
+## React native camera
+
+This is camera,barcode and qrcode
+
+react-native-camera ----> install this package ---> npm install --save react-native-camera
