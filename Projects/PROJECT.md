@@ -34,3 +34,18 @@ Check this file for the QRcode scanner. I have implemented a reusable component
 This is camera,barcode and qrcode
 
 react-native-camera ----> install this package ---> npm install --save react-native-camera
+
+Add this line to the Androidmanifest.xml file 
+<uses-permission android:name="android.permission.CAMERA" />
+
+And we also need to include a few lines at android/app/build.gradle‍
+
+	
+android { 
+ ... 
+ defaultConfig { 
+  ... 
+  missingDimensionStrategy 'react-native-camera', 'general' /* insert this line */
+ }
+}
+	
