@@ -8,6 +8,9 @@ require Pod::Executable.execute_command('node', ['-p',
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
+
+
+
 # If you are using a `react-native-flipper` your iOS build will fail when `NO_FLIPPER=1` is set.
 # because `react-native-flipper` depends on (FlipperKit,...) that will be excluded
 #
@@ -45,9 +48,20 @@ target 'Projects' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+
+permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
+  pod 'Permission-LocationAccuracy', :path => "#{permissions_path}/LocationAccuracy"
+  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways"
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+  
   target 'ProjectsTests' do
     inherit! :complete
     # Pods for testing
+
+    
   end
 
   post_install do |installer|
